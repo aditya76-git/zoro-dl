@@ -12,6 +12,8 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/aditya76-git/zoro-dl",
+    include_package_data=True,
+    package_data={'zoro_dl': ['static/*']},
     project_urls={
         "Tracker": "https://github.com/aditya76-git/zoro-dl/issues",
     },
