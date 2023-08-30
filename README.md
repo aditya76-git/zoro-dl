@@ -201,13 +201,13 @@ zoro.start_dl()
 ```
 ----------------------------------------------------------------------
 EXTRACTING STREAMS
-[+] DOWNLOADING - Baki: Dai Raitaisai-hen S01E03 Revived! - 1080p
+[+] DOWNLOADING - Baki Hanma: Son of Ogre S01E01 The World's Strongest Senior - 1080p
 [+] DOWNLOADING JPN VIDEO SOURCE
 [+] DOWNLOADING ENG VIDEO SOURCE
-[+] DOWNLOADING SUBTITLES (TOTAL - 29 FOUND)
+[+] DOWNLOADING SUBTITLES (TOTAL - 34 FOUND)
 [+] MUXING FILES
-[+] TASK COMPLETED IN 1m5s
-[+] FILE [Conan76] Baki: Dai Raitaisai-hen S01E03 Revived! [1080p] [WEB] [JPN-ENG] [MULTI-SUBS].mkv
+[+] TASK COMPLETED IN 41s
+[+] FILE [Conan76] Baki Hanma: Son of Ogre S01E01 The World's Strongest Senior [1080p] [WEB] [JPN-ENG] [MULTI-SUBS].mkv
 [+] Cleaning Temp Video Files
 [+] Cleaning Temp Subtitle Files
 ```
