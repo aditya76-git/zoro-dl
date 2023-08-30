@@ -153,7 +153,7 @@ class ZORO:
             "episodeTitle": episode["title"],
             "season": int(self.season),
             "episode": episode_number,
-            "name": f"{self.api.get_info(self.zoro_id, 'title')} S{title_season}E{title_episode} {episode['title']}",
+            "name": f"{self.api.get_info(self.zoro_id, 'title')} S{title_season}E{title_episode} - {episode['title']}",
         }
 
         # Using ThreadPoolExecutor for fetching watch and subtitle information concurrently
