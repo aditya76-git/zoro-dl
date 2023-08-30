@@ -478,6 +478,7 @@ class ZORO:
             self.get_stream_data(episode_number)
         except Exception as e:
             print(colored_text("[+] ERROR - Getting Streams", "red"))
+            print(colored_text("[+] ERROR - {}".format(e), "red"))
 
         print(
             colored_text("[+] DOWNLOADING", "green"),
@@ -488,15 +489,15 @@ class ZORO:
         try:
             self.download_video()
         except Exception as e:
-            print(e)
             print(colored_text("[+] ERROR - Downloading Video", "red"))
+            print(colored_text("[+] ERROR - {}".format(e), "red"))
 
         if len(self.subtitle_sources) > 1:
             try:
                 self.download_subs()
             except Exception as e:
-                print(e)
                 print(colored_text("[+] ERROR - Downloading Subs", "red"))
+                print(colored_text("[+] ERROR - {}".format(e), "red"))
 
         try:
             final_muxed_path = self.mux_files()
@@ -509,6 +510,7 @@ class ZORO:
             print(colored_text(f"[+] FILE {final_muxed_path}", "blue"))
         except Exception as e:
             print(colored_text("[+] ERROR - Muxing Files", "red"))
+            print(colored_text("[+] ERROR - {}".format(e), "red"))
 
         self.clean_up()
 
