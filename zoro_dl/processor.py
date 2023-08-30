@@ -177,7 +177,7 @@ class ZORO:
         )
 
         self.subs_file_name_data = (
-            "MULTI-SUBS" if len(self.subtitle_sources) > 1 else "ENG-SUBS"
+            "MULTI-SUBS" if len(self.subtitle_sources) > 1 else ("ENG-SUBS" if len(self.subtitle_sources) == 1 else "NO-SUBS")
         )
 
     def fetch_video_sources(self, watch_id_list, sources):
@@ -399,12 +399,12 @@ class ZORO:
         _, height = get_video_resolution(out_name)
 
         out_file_name = (
-            "[{gr}] {name} [{resolution}p] [WEB] [{audio}] [{subs}].mkv".format(
+            "[{gr}] {name} [{resolution}p] [WEB] [{audio}]{subs}.mkv".format(
                 gr=self.custom_group_tag,
                 name=self.complete_data["name"],
                 resolution=height,
                 audio=self.lang_file_name_data,
-                subs=self.subs_file_name_data,
+                subs=" [{}]".format(self.subs_file_name_data) if self.subs_file_name_data != "NO-SUBS" else "",
             )
         )
 
