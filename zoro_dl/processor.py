@@ -320,7 +320,7 @@ class ZORO:
 
         # Adding Subtitles Files
 
-        if len(self.subtitle_sources) > 1:
+        if len(self.subtitle_sources) >= 1:
             for source in self.subtitle_sources:
                 ffmpeg_opts.extend(
                     [
@@ -345,13 +345,13 @@ class ZORO:
 
         # Mapping Subtitle Source only if dl_type == both
 
-        if len(self.subtitle_sources) > 1:
+        if len(self.subtitle_sources) >= 1:
             for i in range(len(self.subtitle_sources)):
                 ffmpeg_opts.extend(["-map", f"{len(self.video_sources)+i}:s:0"])
 
         # Adding Language Metadata of Subtitles only if dl_type == both
 
-        if len(self.subtitle_sources) > 1:
+        if len(self.subtitle_sources) >= 1:
             for i in range(len(self.subtitle_sources)):
                 ffmpeg_opts.extend(
                     [
@@ -381,7 +381,7 @@ class ZORO:
 
         # Adding Subtitle Title metadata
 
-        if len(self.subtitle_sources) > 1:
+        if len(self.subtitle_sources) >= 1:
             for i in range(len(self.subtitle_sources)):
                 ffmpeg_opts.extend(
                     [
@@ -492,7 +492,7 @@ class ZORO:
             print(colored_text("[+] ERROR - Downloading Video", "red"))
             print(colored_text("[+] ERROR - {}".format(e), "red"))
 
-        if len(self.subtitle_sources) > 1:
+        if len(self.subtitle_sources) >= 1:
             try:
                 self.download_subs()
             except Exception as e:
