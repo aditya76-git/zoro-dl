@@ -488,12 +488,14 @@ class ZORO:
         try:
             self.download_video()
         except Exception as e:
+            print(e)
             print(colored_text("[+] ERROR - Downloading Video", "red"))
 
         if len(self.subtitle_sources) > 1:
             try:
                 self.download_subs()
             except Exception as e:
+                print(e)
                 print(colored_text("[+] ERROR - Downloading Subs", "red"))
 
         try:
