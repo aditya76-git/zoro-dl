@@ -134,7 +134,7 @@ Make sure to verify the `series` which you want to `DL` in "both",If it has same
 Will download in JPN-ENG Audio with All Available Subtitles
 
 ```
-dl_type = "dub"
+dl_type = "both"
 ```
 
 ```python3
