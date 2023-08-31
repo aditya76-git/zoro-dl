@@ -122,7 +122,7 @@ zoro = ZORO(
 | `season` | `str` | **Optional**. The season which will be added to the filename. Defaults to "1". Since ZORO have different URL for different seasons of a particular, This is important to be passed inorder to generate appropiate filenames | 1 |
 | `episode` | `str` or `None` | **Optional**. Episodes to be downloaded. Can be a range of episodes (e.g., "1-5"), a single episode (e.g., "10"), or None to download the complete season. Defaults to None. | 1-5 |
 | `resolution` | `str` or `None` | **Optional**. The resolution for downloading (e.g., "1080p" , "720p"). Defaults to "1080p". | 720p |
-| `dl_type` | `str` or `None` | **Optional**. Download type: "sub", "dub", or "both". Defaults to "both". "sub" will download in JPN Audio with All Available Subtitles, "dub" will download in ENG Audio with All Available Subtitles and "both" with download in JPN-ENG with All Available Subtitles. Make sure to verify the series which you want to DL in "both",If it has same duration in both sub and dub player on ZORO, Only then it will work or else you will have audio sync issues | both |
+| `dl_type` | `str` or `None` | **Optional**. Download type: "sub", "dub", or "both". Defaults to "both". "sub" will download in JPN Audio with All Available Subtitles, "dub" will download only in ENG Audio and "both" with download in JPN-ENG with All Available Subtitles. Make sure to verify the series which you want to DL in "both",If it has same duration in both sub and dub player on ZORO, Only then it will work or else you will have audio sync issues | both |
 | `group_tag` | `str` or `None` | **Optional**. Custom group tag for metadata. Defaults to "NOGRP" | S3BS |
 
 
