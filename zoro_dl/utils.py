@@ -1,5 +1,5 @@
 import os, requests, subprocess, re, json
-
+from bs4 import BeautifulSoup
 script_directory = os.path.dirname(os.path.abspath(__file__))
 
 
@@ -103,9 +103,9 @@ def extract_zoro_id(url):
     """
     Extract the Zoro ID from a given URL.
 
-    This function takes a URL from the Zoro website and extracts the unique ID associated with the content.
-    It uses a regular expression pattern to capture the ID from the URL and returns it. If no match is found,
-    it returns None.
+    This function takes a URL from the Zoro website, retrieves information about the content
+    associated with the URL, and extracts the unique Zoro ID. It uses a combination of web scraping
+    and API calls to obtain the ID. If no match is found, it returns None.
 
     Args:
         url (str): The URL from which to extract the Zoro ID.
@@ -113,10 +113,29 @@ def extract_zoro_id(url):
     Returns:
         str or None: The extracted Zoro ID if found in the URL, or None if no match is found.
     """
-    pattern = r"(?:\/watch\/|\/)([a-zA-Z0-9-]+)(?:\?.*)?$"
-    match = re.search(pattern, url)
-    if match:
-        return match.group(1)
+    response = requests.get(url)
+    
+    if response.status_code == 200:
+        soup = BeautifulSoup(response.text, 'html.parser')
+        element = soup.find('li', class_='breadcrumb-item active d-title')
+        
+        if element:
+            title = element.text
+            base_url = "https://api.consumet.org/anime/zoro/"
+            zoro_url = f"{base_url}{title}"
+            
+            response = requests.get(zoro_url)
+            
+            if response.status_code == 200:
+                data = response.json()
+                results = data.get('results', [])  # Access the 'results' key
+                
+                for result in results:
+                    if title.lower() in result.get('title', '').lower():
+                        zoro_id = result.get('id')
+                        
+                        return zoro_id
+    
     return None
 
 

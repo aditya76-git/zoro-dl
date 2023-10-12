@@ -479,12 +479,17 @@ class ZORO:
         except Exception as e:
             print(colored_text("[+] ERROR - Getting Streams", "red"))
             print(colored_text("[+] ERROR - {}".format(e), "red"))
+            return
 
-        print(
-            colored_text("[+] DOWNLOADING", "green"),
-            colored_text("- {}".format(self.complete_data["name"]), "blue"),
-            colored_text("- {}p".format(self.resolution), "yellow"),
-        )
+        if hasattr(self, "complete_data"):  # Check if complete_data exists
+            print(
+                colored_text("[+] DOWNLOADING", "green"),
+                colored_text("- {}".format(self.complete_data["name"]), "blue"),
+                colored_text("- {}p".format(self.resolution), "yellow"),
+            )
+        else:
+            print(colored_text("[+] ERROR - Missing complete_data", "red"))
+            return
 
         try:
             self.download_video()
@@ -528,7 +533,7 @@ class ZORO:
         """
 
         if self.dl_type not in ["sub", "dub", "both"]:
-
+            
             print(colored_text("[+] ERROR - Invalid dl_type", "red"))
             print(
                 colored_text(
@@ -557,4 +562,5 @@ class ZORO:
         # If In Range Episodes Requested
         for ep_index in range(self.episode_start, (self.episode_end + 1)):
             print(self.separator)
+            print(f"Processing episode {ep_index}...")
             self.processor(ep_index)
