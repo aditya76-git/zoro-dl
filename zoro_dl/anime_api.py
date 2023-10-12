@@ -10,7 +10,7 @@ class AnimeAPI:
     """
 
     def __init__(self):
-        self.base_url = "https://consumet-nu-jet.vercel.app/anime/zoro"
+        self.base_url = "https://api.consumet.org/anime/zoro"
 
     def get_episodes(self, id):
         response = requests.get(f"{self.base_url}/info?id={id}").json()
