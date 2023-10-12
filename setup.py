@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="zoro-dl",
-    version="1.0.1",
+    version="1.0.2",
     author="aditya76-git",
     author_email="cdr.aditya.76@gmail.com",
     description="ZORO-DL - Download DUAL-AUDIO Multi SUBS Anime from ZORO",
@@ -22,7 +22,7 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     install_requires=[
-        "requests",
+        "requests", "BeautifulSoup4",
     ],
     packages=setuptools.find_packages(),
     python_requires=">=3.6",
