@@ -4,7 +4,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="zoro-dl",
+    name="zoro_dl",
     version="1.0.2",
     author="aditya76-git",
     author_email="cdr.aditya.76@gmail.com",
