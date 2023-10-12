@@ -1,6 +1,5 @@
-
-
 ![Logo](https://i.imgur.com/VR5m7DR.png)
+
 <div style="text-align:center;">
   <a href="https://github.com/aditya76-git">aditya76-git</a> /
   <a href="https://github.com/aditya76-git/zoro-dl">zoro-dl</a>
@@ -9,29 +8,33 @@
 <br />
 
 # 🔥ZORO-DL - A Python Package to Download Anime from ZORO [DUAL AUDIO] [MULTI SUBS]
+
 ZORO-DL is a powerful Python package designed to simplify the process of downloading your favorite anime content from ZORO
 
 You can Download Anime in DUAL AUDIO (JPN-ENG) with MULTI-SUBS
 
 # 📋Details
- - [🔎Why ZORO-DL](#why-zoro-dl)
- - [⚠️ Disclaimer](#disclaimer)
- - [💡Pre Requisite](#pre-requisite)
-    - [🔨FFmpeg](#ffmpeg)
- - [⚙️Installation](#installation)
- - [🚀Initialization](#initialization)
- - [📚USAGE GUIDE](#usage-guide)
-    - [🌍DUAL-AUDIO MULTI-SUBS](#both)
-    - [🎧JPN AUDIO MULTI-SUBS](#sub)
-    - [🔊ENG AUDIO](#dub)
- - [📋TERMINAL OUTPUT](#terminal-output)
- - [📂MEDIAINFO](#mediainfo)
- - [🌟Show Your Support](#show-your-support)
- - [👨‍💻Developement](#developement)
- - [🙌🏼Thanks To](#thanks-to)
- - [💻Authors](#authors)
+
+- [🔎Why ZORO-DL](#why-zoro-dl)
+- [⚠️ Disclaimer](#disclaimer)
+- [💡Pre Requisite](#pre-requisite)
+  - [🔨FFmpeg](#ffmpeg)
+- [⚙️Installation](#installation)
+- [🚀Initialization](#initialization)
+- [📚USAGE GUIDE](#usage-guide)
+  - [🌍DUAL-AUDIO MULTI-SUBS](#both)
+  - [🎧JPN AUDIO MULTI-SUBS](#sub)
+  - [🔊ENG AUDIO](#dub)
+- [📋TERMINAL OUTPUT](#terminal-output)
+- [📂MEDIAINFO](#mediainfo)
+- [🌟Show Your Support](#show-your-support)
+- [👨‍💻Developement](#developement)
+- [🤝Contributors](#contributors)
+- [🙌🏼Thanks To](#thanks-to)
+- [💻Authors](#authors)
 
 # <a id="why-zoro-dl"></a>🔎Why ZORO-DL
+
 Navigating through the ads on ZORO.to can be a bit of a hassle, Pop-ups left and right, interrupting your anime viewing experience While ad blockers work online, what if you want to enjoy your shows offline? That's where ZORO-DL comes into play.
 
 Most sites offer those massive Video files that eat up your storage. But ZORO? They've got thier own encodes which are very tiny. They just have a small watermark for once or twice, hardly noticeable.You can get both the Audios Japanese and English with Multi Subs in around 300 MB for 1080p modern animes
@@ -39,6 +42,7 @@ Most sites offer those massive Video files that eat up your storage. But ZORO? T
 Perfect for ZORO fans who want their favorite episodes ready to watch anytime, anywhere. No more hassle, just straightforward anime enjoyment.
 
 # <a id="disclaimer"></a>⚠️ Disclaimer
+
 `ZORO-DL` is a tool that uses the `API` provided by [consumet.org](https://consumet.org/) to fetch streaming links from `ZORO.to`. It does not claim any `ownership` or `affiliation` with ZORO.to or consumet.org. ZORO-DL is solely developed to enhance the user experience by providing a convenient way to download and enjoy anime content from `ZORO.to`. Use this tool responsibly and in accordance with the terms of use of the respective websites.
 
 The essence of this `project` lies in the seamless integration of `automation` and `efficiency` to harness the content available on the internet. It's important to note that all the content accessed through this project is sourced from `external`, `non-affiliated` platforms.
@@ -48,7 +52,6 @@ The essence of this `project` lies in the seamless integration of `automation` a
 ## <a id="ffmpeg"></a>🔨FFmpeg
 
 Before using this tool, please ensure that you have `FFmpeg` installed and added to your system's PATH. `FFmpeg` is a crucial component for video processing and manipulation, which ZORO-DL relies on. Follow the steps below to install `FFmpeg` on different operating systems:
-
 
 ## Linux (Ubuntu/Debian):
 
@@ -64,7 +67,9 @@ sudo apt install ffmpeg
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
+
 - Install FFmpeg by typing:
+
 ```bash
 brew install ffmpeg
 ```
@@ -78,18 +83,18 @@ Unzip this file by using any file archiver such as Winrar or 7z.
 Rename the extracted folder to ffmpeg and move it into the root of C: drive.
 ![STEP 3](https://media.geeksforgeeks.org/wp-content/uploads/20210912212010/3.png)
 Now, run `cmd` as an administrator and set the environment path variable for `ffmpeg` by running the following `command`:
+
 ```bash
 setx /m PATH "C:\ffmpeg\bin;%PATH%"
 ```
+
 ![STEP 4](https://media.geeksforgeeks.org/wp-content/uploads/20210912212036/Screenshotfrom20210912211815.png)
 
->GUIDE SOURCE - [GEEKSFORGEEKS](https://www.geeksforgeeks.org/how-to-install-ffmpeg-on-windows/)
+> GUIDE SOURCE - [GEEKSFORGEEKS](https://www.geeksforgeeks.org/how-to-install-ffmpeg-on-windows/)
 
 # <a id="installation"></a>⚙️Installation
 
 Open your terminal or command prompt and enter the following command:
-
-
 
 ```bash
 pip install git+https://github.com/aditya76-git/zoro-dl@main
@@ -98,8 +103,6 @@ pip install git+https://github.com/aditya76-git/zoro-dl@main
 # <a id="initialization"></a>🚀Initialization
 
 To get started, you need to initialize an instance of the `ZORO` class
-
-
 
 ```python3
 from zoro_dl import ZORO
@@ -116,17 +119,17 @@ zoro = ZORO(
 
 ```
 
-| Parameter | Type | Description | Example |
-| :-------- | :--- | :---------- | :--- |
-| `url ` | `str` | **Required**. The URL of the anime series on ZORO.to that you want to download from. |  https://aniwatch.to/watch/baki-hanma-son-of-ogre-15723|
-| `season` | `str` | **Optional**. The season which will be added to the filename. Defaults to "1". Since ZORO have different URL for different seasons of a particular, This is important to be passed inorder to generate appropiate filenames | 1 |
-| `episode` | `str` or `None` | **Optional**. Episodes to be downloaded. Can be a range of episodes (e.g., "1-5"), a single episode (e.g., "10"), or None to download the complete season. Defaults to None. | 1-5 |
-| `resolution` | `str` or `None` | **Optional**. The resolution for downloading (e.g., "1080p" , "720p"). Defaults to "1080p". | 720p |
-| `dl_type` | `str` or `None` | **Optional**. Download type: "sub", "dub", or "both". Defaults to "both". "sub" will download in JPN Audio with All Available Subtitles, "dub" will download only in ENG Audio and "both" with download in JPN-ENG with All Available Subtitles. Make sure to verify the series which you want to DL in "both",If it has same duration in both sub and dub player on ZORO, Only then it will work or else you will have audio sync issues | both |
-| `group_tag` | `str` or `None` | **Optional**. Custom group tag for metadata. Defaults to "NOGRP" | S3BS |
-
+| Parameter    | Type            | Description                                                                                                                                                                                                                                                                                                                                                                                                                               | Example                                                |
+| :----------- | :-------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------- |
+| `url `       | `str`           | **Required**. The URL of the anime series on ZORO.to that you want to download from.                                                                                                                                                                                                                                                                                                                                                      | https://aniwatch.to/watch/baki-hanma-son-of-ogre-15723 |
+| `season`     | `str`           | **Optional**. The season which will be added to the filename. Defaults to "1". Since ZORO have different URL for different seasons of a particular, This is important to be passed inorder to generate appropiate filenames                                                                                                                                                                                                               | 1                                                      |
+| `episode`    | `str` or `None` | **Optional**. Episodes to be downloaded. Can be a range of episodes (e.g., "1-5"), a single episode (e.g., "10"), or None to download the complete season. Defaults to None.                                                                                                                                                                                                                                                              | 1-5                                                    |
+| `resolution` | `str` or `None` | **Optional**. The resolution for downloading (e.g., "1080p" , "720p"). Defaults to "1080p".                                                                                                                                                                                                                                                                                                                                               | 720p                                                   |
+| `dl_type`    | `str` or `None` | **Optional**. Download type: "sub", "dub", or "both". Defaults to "both". "sub" will download in JPN Audio with All Available Subtitles, "dub" will download only in ENG Audio and "both" with download in JPN-ENG with All Available Subtitles. Make sure to verify the series which you want to DL in "both",If it has same duration in both sub and dub player on ZORO, Only then it will work or else you will have audio sync issues | both                                                   |
+| `group_tag`  | `str` or `None` | **Optional**. Custom group tag for metadata. Defaults to "NOGRP"                                                                                                                                                                                                                                                                                                                                                                          | S3BS                                                   |
 
 # <a id="usage-guide"></a>📚USAGE GUIDE
+
 ## <a id="both"></a>🌍DUAL-AUDIO MULTI-SUBS
 
 Make sure to verify the `series` which you want to `DL` in "both",If it has same duration in both `sub` and `dub` player on `ZORO`, Only then it will work or else you will have audio sync issues
@@ -159,6 +162,7 @@ Will download in JPN Audio with All Available Subtitles
 ```
 dl_type = "sub"
 ```
+
 ```python3
 from zoro_dl import ZORO
 
@@ -196,6 +200,7 @@ zoro = ZORO(
 zoro.start_dl()
 
 ```
+
 # <a id="terminal-output"></a>📋 TERMINAL OUTPUT
 
 ```
@@ -318,7 +323,6 @@ Forced                                   : No
 
 - If you find this project useful or interesting, please consider giving it a star on GitHub. It's a simple way to show your support and help others discover the project.
 
-
 ![Github Stars](https://img.shields.io/github/stars/aditya76-git/zoro-dl?style=social "Github Stars")
 
 # <a id="developement"></a>👨‍💻Developement
@@ -327,12 +331,14 @@ Thank you for your interest in contributing to this project! There are several w
 
 - **Opening Issues**: If you encounter a bug, have a feature request, or want to suggest an improvement, please open an issue. We appreciate your feedback!
 - **Cloning the Project**: To work on the project locally, you can clone the repository by running:
+
 ```bash
 git clone https://github.com/aditya76-git/zoro-dl.git
 ```
+
 - **Sending Pull Requests**: If you'd like to contribute directly to the codebase, you can fork the repository, make your changes, and then send a pull request. We welcome your contributions!
 
-## Contributors
+# <a id="contributors"></a>🤝Contributors
 
 A Big **Thanks** to those who helped make our project better.
 
@@ -340,13 +346,10 @@ A Big **Thanks** to those who helped make our project better.
 
 - GitHub: [@weebzone](https://github.com/weebzone)
 
-
 # <a id="thanks-to"></a>🙌🏼Thanks To
 
 - ZORO
 - CONSUMET API - [https://github.com/consumet/api.consumet.org](https://github.com/consumet/api.consumet.org)
-
-
 
 # <a id="authors"></a>💻Authors
 
