@@ -332,6 +332,15 @@ git clone https://github.com/aditya76-git/zoro-dl.git
 ```
 - **Sending Pull Requests**: If you'd like to contribute directly to the codebase, you can fork the repository, make your changes, and then send a pull request. We welcome your contributions!
 
+## Contributors
+
+A Big **Thanks** to those who helped make our project better.
+
+**Karan Adhikari**
+
+- GitHub: [@weebzone](https://github.com/weebzone)
+
+
 # <a id="thanks-to"></a>🙌🏼Thanks To
 
 - ZORO
