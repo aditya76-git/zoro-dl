@@ -13,6 +13,12 @@ ZORO-DL is a powerful Python package designed to simplify the process of downloa
 
 You can Download Anime in DUAL AUDIO (JPN-ENG) with MULTI-SUBS
 
+# ✅Status
+
+![Status](https://consumet-api-status.vercel.app/?url=https://api.consumet.org/anime/zoro/watch?episodeId=death-note-60$episode$1464$dub)
+
+The project heavily relies on the [CONSUMET API](https://consumet.org/). If the API experiences downtime, the project won't function. Kindly wait until the developers restore the API to its operational state.
+
 # 📋Details
 
 - [🔎Why ZORO-DL](#why-zoro-dl)
